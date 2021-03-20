@@ -14,7 +14,7 @@ client.on('ready', () => {
   channel = client.channels.cache.get(config.discord.CHANNEL_ID)
 
   webhooks.on('pull_request', response => {
-    if (response.payload.pull_request.state === 'open') {
+    if (response.payload.action === 'opened') {
       const {
         title,
         user,
